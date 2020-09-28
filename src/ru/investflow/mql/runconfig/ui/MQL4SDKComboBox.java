@@ -23,7 +23,7 @@ public class MQL4SDKComboBox extends ComboBox<Sdk> {
     public MQL4SDKComboBox(@NotNull SortedComboBoxModel<Sdk> model) {
         super(model);
         this.model = model;
-        setRenderer(new ListCellRendererWrapper<>() {
+        setRenderer(new ListCellRendererWrapper<Sdk>() {
             @Override
             public void customize(JList list, Sdk sdk, int index, boolean selected, boolean hasFocus) {
                 setText(sdk == null ? "[none]" : sdk.getName());

@@ -59,8 +59,8 @@ public class PreprocessorPropertyInspection extends LocalInspectionTool implemen
             String validatorName = getValidatorName(name);
             PropertyValueValidator validator = VALIDATORS_BY_NAME.get(validatorName);
             if (validator == null) {
-                var psi = block.keyNode.getPsi();
-                var descriptor = manager.createProblemDescriptor(psi, psi, UNKNOWN_PROPERTY_WARNING, ProblemHighlightType.GENERIC_ERROR_OR_WARNING, true);
+                PsiElement psi = block.keyNode.getPsi();
+                ProblemDescriptor descriptor = manager.createProblemDescriptor(psi, psi, UNKNOWN_PROPERTY_WARNING, ProblemHighlightType.GENERIC_ERROR_OR_WARNING, true);
                 descriptors.add(descriptor);
                 continue;
             }
